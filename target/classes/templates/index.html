@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doña Anita</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    .navbar {
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+      font-weight: 300;
+      background: rgb(237, 63, 55);
+      background: radial-gradient(circle, #ed3f37 0%, #ed3f37 0%, #c6252f 70%);
+    }
+
+    .navbar * {
+      box-sizing: border-box;
+      transition: all .35s ease;
+    }
+
+    .navbar li {
+      display: inline-block;
+      list-style: outside none none;
+      margin: .5em 1em;
+      padding: 0;
+    }
+
+    .navbar a {
+      padding: .5em .8em;
+      color: #ffffff80;
+      position: relative;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .navbar a::before,
+    .navbar a::after {
+      content: '';
+      height: 14px;
+      width: 14px;
+      position: absolute;
+      transition: all .35s ease;
+      opacity: 0;
+    }
+
+    .navbar a::before {
+      content: '';
+      right: 0;
+      top: 0;
+      border-top: 3px solid #f8c6b7;
+      border-right: 3px solid #fecfbd;
+      transform: translate(-100%, 50%);
+    }
+
+    .navbar a:after {
+      content: '';
+      left: 0;
+      bottom: 0;
+      border-bottom: 3px solid #ffa526;
+      border-left: 3px solid #fb2f2f;
+      transform: translate(100%, -50%);
+    }
+
+    .navbar a:hover:before,
+    .navbar a:hover:after {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    .navbar a:hover {
+      color: #ffffff;
+    }
+
+    footer {
+      background: radial-gradient(circle, #ed3f37 0%, #c6252f 70%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: ffffff80;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+
+    .icon-empanada {
+      content: url('https://img.icons8.com/emoji/48/000000/empanada.png');
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="../img/logo.png" alt="logo" style="width: 80px;">
+      <a class="navbar-brand" href="javascript:void(0)">Danna Millan y Gabriel Ortega</a>
+
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h1>
+      <center>Empanadas Doña Anita</center>
+    </h1>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <img
+              src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/460471862_122106965516525465_4735020480809046809_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=koGioA3g2nkQ7kNvgHL1uob&_nc_ht=scontent.fbga1-3.fna&_nc_gid=AbmYeFAK6HQW5sEGVwgaDlj&oh=00_AYCUkehJZ3XV5F-67_buvCaoZK_YR8C94MIRmr7oovr5Hw&oe=66F55BEB"
+              class="img-fluid" alt="Empanadas">
+            <a href="/verCliente.html" class="stretched-link"></a>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <img
+              src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/461053631_122106965696525465_646359321438605170_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=b8XjcrUTzzcQ7kNvgGnHtdV&_nc_ht=scontent.fbga1-3.fna&_nc_gid=AT9JCNb--u_kc3PWVfVIvOs&oh=00_AYChd11TB9kMvOyo2L_JRU5QkyJT5SXBIh2uJGhRpj4adg&oe=66F5581F"
+              class="img-fluid" alt="Empanadas">
+            <a href="/verComida.html" class="stretched-link"></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <img
+              src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/460890542_122106966188525465_933158528200408430_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PLNh6Z0uRNEQ7kNvgGH_Wfz&_nc_ht=scontent.fbga1-3.fna&oh=00_AYCr4ZXEjCS2c-1YhzLxNUyaMJFFvoX1bSFrj3qSwse0tA&oe=66F56931"
+              class="img-fluid" alt="Empanadas">
+            <a href="/verEmpleado.html" class="stretched-link"></a>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <img
+              src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/461034113_122106966668525465_4728911894831204271_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=vrmH0J7JpL8Q7kNvgGB8Id7&_nc_ht=scontent.fbga1-3.fna&_nc_gid=A7TqLWqmaA_EjfXzf8UojfI&oh=00_AYC3kdr1ZErAQEbq1o7KHoLXc6kfViecuqLwAPoSIj0q-A&oe=66F552E7"
+              class="img-fluid" alt="Empanadas">
+            <a href="/verTienda.html" class="stretched-link"></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <img
+              src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/460819860_122106966476525465_5662912703951839178_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Hj1NbJ9AVwAQ7kNvgGJBGi8&_nc_ht=scontent.fbga1-3.fna&_nc_gid=AXPzyj2p9_8Hy3XAu2XQc-i&oh=00_AYCg9aWe3NfRWsGPxorPz5oBhq51rhNj3jcVOmUJqLop1g&oe=66F53AFB"
+              class="img-fluid" alt="Empanadas">
+            <a href="/verPedido.html" class="stretched-link"></a>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <img
+              src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/460482872_122106962174525465_2344773602040172845_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=cRzix9mIEp4Q7kNvgEjgvtQ&_nc_ht=scontent.fbga1-3.fna&oh=00_AYAVrDEfqaMbArMSkubheJDTqwHXuVA-9Ks_yoCxAEXJlw&oe=66F54211"
+              class="img-fluid" alt="Empanadas"> <a href="https://github.com/GabrielOrtega01/DonaAnita.git"
+              class="stretched-link" target="_blank"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer>
+    <p>&copy; 2024 Doña Anita Empanadas. Todos los derechos reservados.</p>
+    <div> <a href="https://web.facebook.com/alimentosdonaanita" target="_blank"><i
+          class="fab fa-facebook icon"></i>Facebook</a> | <a href="https://www.instagram.com/empanadas.donaanita/"
+        target="_blank"><i class="fab fa-instagram icon"></i>Instagram</a> </div>
+  </footer>
+</body>
+
+</html>

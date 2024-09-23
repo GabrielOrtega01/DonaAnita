@@ -1,0 +1,16 @@
+com\donaanita\app\controladorweb\ControladorWebComida.class
+com\donaanita\app\repository\ClienteRepositorio.class
+com\donaanita\app\repository\ComidaRepositorio.class
+com\donaanita\app\variables\Pedido.class
+com\donaanita\app\variables\Tienda.class
+com\donaanita\app\controladorweb\ControladorWebEmpleado.class
+com\donaanita\app\controladorweb\ControladorWebPedido.class
+com\donaanita\app\controladorweb\ControladorWebCliente.class
+com\donaanita\app\variables\Cliente.class
+com\donaanita\app\variables\Comida.class
+com\donaanita\app\variables\Empleado.class
+com\donaanita\app\repository\PedidoRepositorio.class
+com\donaanita\app\controladorweb\ControladorWebTienda.class
+com\donaanita\app\DonaAnitaApplication.class
+com\donaanita\app\repository\TiendaRepositorio.class
+com\donaanita\app\repository\EmpleadoRepositorio.class

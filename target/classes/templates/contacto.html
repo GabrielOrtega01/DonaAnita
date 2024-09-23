@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Doña Anita Empanadas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #F7F7F7;
+            color: #333;
+        }
+
+        header {
+            background: radial-gradient(circle, #ed3f37 0%, #c6252f 70%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            margin-left: 240px;
+            z-index: 1;
+            position: relative;
+        }
+
+        header img {
+            height: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #DCBB30;
+        }
+
+        aside {
+            width: 250px;
+            background-color: #F9E79F;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        main {
+            margin-left: 270px;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #C6252F;
+        }
+
+        .contact-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-form label {
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #C6252F;
+            border-radius: 5px;
+            width: 100%;
+            resize: none;
+        }
+
+        .btn-submit {
+            background-color: #C6252F;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #ED3F37;
+        }
+
+        footer {
+            background: radial-gradient(circle, #ed3f37 0%, #c6252f 70%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-left: 240px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #DCBB30;
+        }
+
+        /* Estilo para dispositivos móviles */
+        @media (max-width: 768px) {
+            aside {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            header {
+                margin-left: 0;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer {
+                margin-left: 0;
+            }
+
+            .contact-form {
+                width: 100%;
+                padding: 0; /* Eliminar padding para más espacio en móvil */
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                width: calc(100% - 20px); /* Ajustar ancho para evitar desbordamiento */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="tu-logo.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home icon"></i>Inicio</a></li>
+                <li><a href="/verComida.html"><i class="fas fa-utensils icon"></i>Menú</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <figure>
+            <img class="aside-img" src="../img/contactanos.jpg" alt="Imagen Lateral">
+            <figcaption>Descripción de la imagen lateral</figcaption>
+        </figure>
+    </aside>
+
+    <main>
+        <h1>Contacto</h1>
+
+        <p>Si tienes alguna pregunta, comentario o necesitas más información, no dudes en contactarnos usando el formulario a continuación:</p>
+
+        <form class="contact-form" action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Doña Anita Empanadas. Todos los derechos reservados.</p>
+        <div>
+            <a href="https://web.facebook.com/alimentosdonaanita" target="_blank"><i class="fab fa-facebook icon"></i>Facebook</a> |
+            <a href="https://www.instagram.com/empanadas.donaanita/" target="_blank"><i class="fab fa-instagram icon"></i>Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
