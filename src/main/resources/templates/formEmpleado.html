@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Empleado - Doña Anita Empanadas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #F7F7F7;
+            color: #333;
+        }
+
+        header {
+            background: radial-gradient(circle, #ed3f37 0%, #c6252f 70%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            margin-left: 240px;
+            z-index: 1;
+            position: relative;
+        }
+
+        header img {
+            height: 80px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #DCBB30;
+        }
+
+        aside {
+            width: 250px;
+            background-color: #F9E79F;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .aside-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        main {
+            margin-left: 270px;
+            padding: 40px;
+        }
+
+        h2 {
+            color: #C6252F;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form fieldset {
+            border: 1px solid #C6252F;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        form legend {
+            color: #ED3F37;
+            font-weight: bold;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        form input,
+        form select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus,
+        form select:focus {
+            border-color: #C6252F;
+        }
+
+        button {
+            background-color: #C6252F;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #ED3F37;
+            color:white;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: radial-gradient(circle, #ed3f37 0%, #c6252f 70%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-left: 240px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #DCBB30;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+
+        .icon-empanada {
+            content: url('https://img.icons8.com/emoji/48/000000/empanada.png');
+            width: 30px;
+            height: 30px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background-color: #C6252F;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-volver:hover {
+            background-color: #ED3F37;
+            color:white;
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 768px) {
+            aside {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            header {
+                margin-left: 0;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../img/logo.png" alt="Logo Doña Anita">
+        <nav>
+            <ul>
+                <li><a href="/"><i class="fas fa-home icon"></i>Inicio</a></li>
+                <li><a href="/verComida.html"><i class="fas fa-utensils icon"></i>Menú</a></li>
+                <li><a href="/contacto.html"><i class="fas fa-envelope icon"></i>Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <h3><i class="icon-empanada"></i>Los Mejores Empleados</h3>
+        <img src="../img/empleado.jpg" alt="Empleado" class="aside-img">
+
+        <figure>
+            <p>Los mejores empleados, dedicados a ofrecer el mejor servicio.</p>
+        </figure>
+    </aside>
+
+    <main>
+        <h2>Formulario Empleado</h2>
+        <form action="/guardarEmpleado" method="post" th:object="${empleado}">
+            <input type="hidden" th:field="*{id}" />
+            <fieldset>
+                <legend>Datos del Empleado</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" required />
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" th:field="*{apellido}" required />
+
+                <label for="cedula">Cédula:</label>
+                <input type="text" id="cedula" th:field="*{cedula}" required />
+
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" th:field="*{telefono}" required />
+            </fieldset>
+
+            <fieldset>
+                <legend>Información de Trabajo</legend>
+                <label for="turno">Turno:</label>
+                <select id="turno" th:field="*{turno}">
+                    <option value="Mañana">Mañana</option>
+                    <option value="Tarde">Tarde</option>
+                </select>
+
+                <label for="tienda">Tienda:</label>
+                <select id="tienda" name="tienda" th:field="*{tienda}">
+                    <option value="" disabled selected>Seleccione una tienda</option>
+                    <option th:each="tienda : ${listaTiendas}" th:value="${tienda.id}" th:text="${tienda.localidad}">
+                    </option>
+                </select>
+            </fieldset>
+
+            <button type="submit"><i class="fas fa-save icon"></i>Guardar</button>
+        </form>
+        <a href="/verEmpleado.html" title="Volver a la lista de empleados" class="btn-volver">
+            <i class="fas fa-arrow-left icon"></i> Volver a la lista
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Doña Anita Empanadas. Todos los derechos reservados.</p>
+        <div>
+            <a href="https://web.facebook.com/alimentosdonaanita" target="_blank"><i
+                    class="fab fa-facebook icon"></i>Facebook</a> |
+            <a href="https://www.instagram.com/empanadas.donaanita/" target="_blank"><i
+                    class="fab fa-instagram icon"></i>Instagram</a>
+        </div>
+    </footer>
+</body>
+
+</html>
