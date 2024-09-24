@@ -6,6 +6,7 @@ import com.donaanita.app.variables.Cliente;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,9 +52,21 @@ public class ControladorWebCliente {
 	}
 	
 	@GetMapping("/cliente/eliminar/{id}")
-	public String eliminarCliente(@PathVariable("id") Integer id) {
-		clienteRepositorio.deleteById(id);  
-		return "redirect:/verCliente.html"; 
+	public String eliminarCliente(@PathVariable("id") Integer id, Model model) {
+	    try {
+	        clienteRepositorio.deleteById(id);
+	    } catch (DataIntegrityViolationException e) {
+	        // Capturamos la excepción y añadimos un mensaje de error al modelo
+	        model.addAttribute("error", "No se puede eliminar el cliente porque tiene pedidos asociados.");
+	        List<Cliente> listaClientes = clienteRepositorio.findAll();
+	        model.addAttribute("listaClientes", listaClientes);
+	        return "verCliente"; // Volvemos a la lista de clientes, pero con el error
+	    }
+	    return "redirect:/verCliente.html"; // Si la eliminación fue exitosa
 	}
+    @GetMapping("/contacto.html")
+    public String mostrarContacto() {
+        return "contacto";  // Asegúrate de que este nombre coincide con tu archivo contacto.html en templates
+    }
 }
 

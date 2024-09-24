@@ -2,6 +2,7 @@ package com.donaanita.app.controladorweb;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,9 +68,18 @@ public class ControladorWebEmpleado {
         return "formEmpleado.html";
     }
 
-    @GetMapping("/empleado/eliminar/{id}")
-    public String eliminarEmpleado(@PathVariable("id") Integer id) {
-        empleadoRepositorio.deleteById(id);
-        return "redirect:/verEmpleado.html";
-    }
+	@GetMapping("/empleado/eliminar/{id}")
+	public String eliminarEmpleado(@PathVariable("id") Integer id, Model model) {
+	    try {
+	    	empleadoRepositorio.deleteById(id);
+	    } catch (DataIntegrityViolationException e) {
+	        // Capturamos la excepción y añadimos un mensaje de error al modelo
+	        model.addAttribute("error", "No se puede eliminar al empleado porque tiene pedidos asociados.");
+	        List<Empleado> listaEmpleado = empleadoRepositorio.findAll();
+	        model.addAttribute("listaEmpleado", listaEmpleado);
+	        return "verEmpleado"; // Volvemos a la lista de empleado, pero con el error
+	    }
+	    return "redirect:/verEmpleado.html"; // Si la eliminación fue exitosa
+	}
+
 }

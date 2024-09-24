@@ -4,6 +4,7 @@ package com.donaanita.app.controladorweb;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,10 +55,19 @@ public class ControladorWebTienda {
         return "formTienda.html";
     }
     
-    @GetMapping("/tienda/eliminar/{id}")
-    public String eliminarTienda(@PathVariable("id") Integer id, Model model) {
-        tiendaRepositorio.deleteById(id);
-        return "redirect:/verTienda.html";
-    }
+	@GetMapping("/tienda/eliminar/{id}")
+	public String eliminarTienda(@PathVariable("id") Integer id, Model model) {
+	    try {
+	    	tiendaRepositorio.deleteById(id);
+	    } catch (DataIntegrityViolationException e) {
+	        // Capturamos la excepción y añadimos un mensaje de error al modelo
+	        model.addAttribute("error", "No se puede eliminar la tienda porque tiene pedidos asociados.");
+	        List<Tienda> listaTienda = tiendaRepositorio.findAll();
+	        model.addAttribute("listaTienda", listaTienda);
+	        return "verTienda"; // Volvemos a la lista de tienda, pero con el error
+	    }
+	    return "redirect:/verTienda.html"; // Si la eliminación fue exitosa
+	}
+	
 }
 

@@ -59,6 +59,29 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             z-index: 2;
         }
+        .icon-empanada {
+            content: url('https://img.icons8.com/emoji/48/000000/empanada.png');
+            width: 30px;
+            height: 30px;
+        }
+
+        .aside-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        figure {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
 
         main {
             margin-left: 270px;
@@ -159,7 +182,7 @@
 
 <body>
     <header>
-        <img src="tu-logo.png" alt="Logo">
+        <img src="../img/logo.png" alt="Logo">
         <nav>
             <ul>
                 <li><a href="/"><i class="fas fa-home icon"></i>Inicio</a></li>
@@ -167,13 +190,14 @@
             </ul>
         </nav>
     </header>
-
     <aside>
         <figure>
-            <img class="aside-img" src="../img/contactanos.jpg" alt="Imagen Lateral">
-            <figcaption>Descripción de la imagen lateral</figcaption>
+            <h3><i class="icon-empanada"></i>Contáctanos</h3>
+            <img class="aside-img" src="../img/contactanos.jpg" alt="Imagen de contacto">
+            <figcaption>Estamos aquí para ayudarte. No dudes en comunicarte con nosotros para cualquier consulta o asistencia.</figcaption>
         </figure>
     </aside>
+    
 
     <main>
         <h1>Contacto</h1>
