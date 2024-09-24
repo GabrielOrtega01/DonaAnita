@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ControladorWebCliente {
@@ -67,6 +68,20 @@ public class ControladorWebCliente {
     @GetMapping("/contacto.html")
     public String mostrarContacto() {
         return "contacto";  // Asegúrate de que este nombre coincide con tu archivo contacto.html en templates
+    }
+    @PostMapping("/contacto.html")
+    public String procesarFormularioContacto(@RequestParam String nombre,
+                                             @RequestParam String email,
+                                             @RequestParam String mensaje,
+                                             Model model) {
+        // Aquí puedes procesar el formulario, por ejemplo, guardar el mensaje en la base de datos
+        // o enviarlo por correo electrónico.
+
+        // Agrega un mensaje de éxito
+        model.addAttribute("exito", "¡Tu mensaje ha sido enviado satisfactoriamente!");
+
+        // Redirige de nuevo a la página de contacto
+        return "contacto";
     }
 }
 
