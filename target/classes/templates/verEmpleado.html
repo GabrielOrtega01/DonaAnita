@@ -97,11 +97,14 @@
             margin-top: 20px;
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid #C6252F;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             text-align: left;
         }
@@ -125,7 +128,8 @@
             color: #ED3F37;
         }
 
-        .btn-nuevo, .btn-volver {
+        .btn-nuevo,
+        .btn-volver {
             display: inline-block;
             margin-top: 20px;
             background-color: #C6252F;
@@ -137,9 +141,10 @@
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .btn-nuevo:hover, .btn-volver:hover {
+        .btn-nuevo:hover,
+        .btn-volver:hover {
             background-color: #ED3F37;
-            color:white;
+            color: white;
             transform: scale(1.05);
         }
 
@@ -194,7 +199,8 @@
             }
 
             table {
-                display: none; /* Oculta la tabla */
+                display: none;
+                /* Oculta la tabla */
             }
 
             .card {
@@ -241,7 +247,9 @@
 
     <main>
         <h1>Lista de Empleados</h1>
-
+        <div th:if="${error}" class="alert alert-danger"></div>
+        <p th:text="${error}"></p>
+        </div>
         <div class="table-container">
             <table>
                 <thead>

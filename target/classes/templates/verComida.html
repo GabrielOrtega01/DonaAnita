@@ -97,11 +97,14 @@
             margin-top: 20px;
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid #C6252F;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             text-align: left;
         }
@@ -125,7 +128,8 @@
             color: #ED3F37;
         }
 
-        .btn-nuevo, .btn-volver {
+        .btn-nuevo,
+        .btn-volver {
             display: inline-block;
             margin-top: 20px;
             background-color: #C6252F;
@@ -137,9 +141,10 @@
             transition: background-color 0.3s, transform 0.3s;
         }
 
-        .btn-nuevo:hover, .btn-volver:hover {
+        .btn-nuevo:hover,
+        .btn-volver:hover {
             background-color: #ED3F37;
-            color:white;
+            color: white;
             transform: scale(1.05);
         }
 
@@ -194,7 +199,8 @@
             }
 
             table {
-                display: none; /* Oculta la tabla */
+                display: none;
+                /* Oculta la tabla */
             }
 
             .card {
@@ -239,6 +245,9 @@
 
     <main>
         <h1>Lista de Comidas</h1>
+        <div th:if="${error}" class="alert alert-danger">
+            <p th:text="${error}"></p>
+        </div>
         <div class="table-container">
             <table>
                 <thead>
@@ -264,7 +273,8 @@
                         <td th:text="${comida.precioBebida}"></td>
                         <td>
                             <a th:href="@{/comida/editar/{id}(id=${comida.id})}">Editar</a>
-                            <a th:href="@{/comida/eliminar/{id}(id=${comida.id})}" onclick="return confirm('¿Estás seguro de que deseas eliminar?');">Eliminar</a>
+                            <a th:href="@{/comida/eliminar/{id}(id=${comida.id})}"
+                                onclick="return confirm('¿Estás seguro de que deseas eliminar?');">Eliminar</a>
                         </td>
                     </tr>
                 </tbody>
@@ -282,7 +292,8 @@
                 <p><strong>Precio de Bebida:</strong> <span th:text="${comida.precioBebida}"></span></p>
                 <p>
                     <a th:href="@{/comida/editar/{id}(id=${comida.id})}">Editar</a>
-                    <a th:href="@{/comida/eliminar/{id}(id=${comida.id})}" onclick="return confirm('¿Estás seguro de que deseas eliminar?');">Eliminar</a>
+                    <a th:href="@{/comida/eliminar/{id}(id=${comida.id})}"
+                        onclick="return confirm('¿Estás seguro de que deseas eliminar?');">Eliminar</a>
                 </p>
             </div>
         </div>
@@ -296,8 +307,10 @@
     <footer>
         <p>&copy; 2024 Doña Anita Empanadas. Todos los derechos reservados.</p>
         <div>
-            <a href="https://web.facebook.com/alimentosdonaanita" target="_blank"><i class="fab fa-facebook icon"></i>Facebook</a> |
-            <a href="https://www.instagram.com/empanadas.donaanita/" target="_blank"><i class="fab fa-instagram icon"></i>Instagram</a>
+            <a href="https://web.facebook.com/alimentosdonaanita" target="_blank"><i
+                    class="fab fa-facebook icon"></i>Facebook</a> |
+            <a href="https://www.instagram.com/empanadas.donaanita/" target="_blank"><i
+                    class="fab fa-instagram icon"></i>Instagram</a>
         </div>
     </footer>
 </body>
